@@ -1,0 +1,44 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "Author":"Sai Kumar Adepu",
+        "title": "Node-Express-ES6-Sample",
+        "description": "User APIs"
+    },
+    "host": "localhost:9000",
+    "basePath": "/",
+    "paths": {
+        "/login": {
+            "post": {
+                "tags": [{
+                    "name": "User Management"
+                }],
+                "summary": "User login",
+                "consumes": ["application/json","application/x-www-form-urlencoded"],
+                "parameters": [{
+                    "name": "email",
+                    "in": "body",
+                    "description": "email,password",
+                    "required":true,
+                    "example":{
+                        "email":"abc@xyz.com",
+                        "password":"password"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Login API",
+                        "examples": {
+                            "application/json": {
+                                "status": 200,
+                                "message": "Login successfull",
+                                "token": "token value"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
